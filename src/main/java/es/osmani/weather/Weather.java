@@ -1,6 +1,5 @@
 package es.osmani.weather;
 
-import es.osmani.weather.Model;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -32,14 +31,7 @@ public class Weather {
 
         JSONArray getArray = object.getJSONArray("weather");
 
-        /*
-        for (JSONArray ga: getArray){
 
-
-            
-        }
-        */
-        
         for (int i = 0; i < getArray.length(); i++) {
             JSONObject obj = getArray.getJSONObject(i);
             model.setIcon((String) obj.get("icon"));
@@ -49,8 +41,8 @@ public class Weather {
         return "Ciudad: " + model.getName() + "\n" +
                 "Temperatura: " + model.getTemp() + "C" + "\n" +
                 "Humedad: " + model.getHumidity() + "%" + "\n" +
-                "Prediccion: " + model.getMain() + "\n" +
-                "Descripcion: " + model.getDescription() + "\n" +
+                "Predicción: " + model.getMain() + "\n" +
+                //"Descripción: " + model.getDescription() + "\n" +
                 "http://openweathermap.org/img/w/" + model.getIcon() + ".png";
     }
 }
